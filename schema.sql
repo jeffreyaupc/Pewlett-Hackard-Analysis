@@ -6,9 +6,6 @@ CREATE TABLE departments (
      UNIQUE (dept_name)
 );
 
-DROP TABLE departments;
-SELECT * FROM departments;
-
 CREATE TABLE employees (
 	emp_no INT NOT NULL,
 	birth_date DATE NOT NULL,
@@ -18,8 +15,6 @@ CREATE TABLE employees (
 	hire_date DATE NOT NULL,
 	PRIMARY KEY (emp_no)
 );
-drop table employees;
-SELECT * FROM employees;
 
 CREATE TABLE dept_manager (
 	dept_no VARCHAR(4) NOT NULL,
@@ -43,9 +38,6 @@ CREATE TABLE salaries (
   PRIMARY KEY (emp_no)
 );
 
-DROP TABLE salaries;
-select * from salaries;
-
 CREATE TABLE dept_emp (
 	emp_no INT NOT NULL,
 	dept_no VARCHAR(4) NOT NULL,
@@ -57,8 +49,6 @@ CREATE TABLE dept_emp (
 	PRIMARY KEY (dept_no, emp_no)
 );
 
-DROP TABLE dept_emp;
-Select * from dept_emp;
 
 CREATE TABLE titles (
 	emp_no INT NOT NULL,
@@ -68,6 +58,3 @@ CREATE TABLE titles (
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
 	PRIMARY KEY (emp_no, title, from_date)
 );
-
-DROP TABLE titles;
-Select * from titles;
